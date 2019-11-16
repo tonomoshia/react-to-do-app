@@ -20,6 +20,7 @@ export default class App extends Component {
     event.preventDefault();
     this.setState(
       {
+        term: "",
         items: [...this.state.items, this.state.term]
       },
       function() {
@@ -34,6 +35,7 @@ export default class App extends Component {
           <input
             placeholder="What do you want to do?"
             onChange={this.onChange}
+            value={this.state.term}
           />
           <button>Add Task</button>
         </form>
