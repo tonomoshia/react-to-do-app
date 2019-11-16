@@ -29,18 +29,35 @@ export default class App extends Component {
       }
     );
   };
+  handler = event => {
+    var task = event.target.parentElement;
+    var taskIndex = task.getAttribute("data-taskid");
+    var taskArray = this.state.items;
+    taskArray.splice(taskIndex, 1);
+    this.setState(
+      {
+        items: taskArray
+      },
+      function() {
+        task.classList.remove("complete");
+        task.querySelector("#undo").classList.add("hidden");
+        task.querySelector("#delete").classList.add("hidden");
+        task.querySelector("#completed").classList.remove("hidden");
+      }
+    );
+  };
   render() {
     return (
       <div className="todoApp">
-        <form className="App" onSubmit ={this.onSubmit}>
+        <form className="App" onSubmit={this.onSubmit}>
           <input
-            placeholder="What do you want to do?"
+            placeholder="What do you need to do?"
             onChange={this.onChange}
             value={this.state.term}
           />
-          <button>Add Task</button>
+          <button type="submit">Add task</button>
         </form>
-        <Tasks items={this.state.items} />
+        <Tasks items={this.state.items} deleteTask={this.handler} />
       </div>
     );
   }
