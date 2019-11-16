@@ -2,7 +2,9 @@
   "name": "react-todo-0",
   "version": "1.0.0",
   "description": "To Do App in React",
-  "keywords": [],
+  "keywords": [
+    "react"
+  ],
   "main": "src/index.js",
   "dependencies": {
     "react": "16.8.6",
