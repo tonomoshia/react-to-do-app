@@ -34,8 +34,7 @@ export default class Tasks extends Component {
             <button
               id="delete"
               className="hidden"
-              onClick={this.props.deleteTask}
-            >
+              onClick={this.props.deleteTask}>
               Delete
             </button>
           </li>
