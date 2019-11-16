@@ -11,11 +11,19 @@ export default class App extends Component {
       items: []
     };
   }
+  onChange = event => {
+    this.setState({ term: event.target.value }, function() {
+      console.log(this.state.term);
+    });
+  };
   render() {
     return (
       <div className="todoApp">
         <form className="App">
-          <input placeholder="What do you want to do?" />
+          <input
+            placeholder="What do you want to do?"
+            onChange={this.onChange}
+          />
           <button>Add Task</button>
         </form>
       </div>
