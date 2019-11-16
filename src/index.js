@@ -20,7 +20,7 @@ export default class App extends Component {
     event.preventDefault();
     this.setState(
       {
-        items: [...this.state.items, this.state]
+        items: [...this.state.items, this.state.term]
       },
       function() {
         console.log(this.state.items);
