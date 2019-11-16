@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
+import Tasks from "./Tasks";
 
 export default class App extends Component {
   constructor(props) {
@@ -39,6 +40,7 @@ export default class App extends Component {
           />
           <button>Add Task</button>
         </form>
+        <Tasks items={this.state.items} />
       </div>
     );
   }
