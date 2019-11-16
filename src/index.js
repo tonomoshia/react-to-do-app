@@ -16,10 +16,21 @@ export default class App extends Component {
       console.log(this.state.term);
     });
   };
+  onSubmit = event => {
+    event.preventDefault();
+    this.setState(
+      {
+        items: [...this.state.items, this.state]
+      },
+      function() {
+        console.log(this.state.items);
+      }
+    );
+  };
   render() {
     return (
       <div className="todoApp">
-        <form className="App">
+        <form className="App" onSubmit ={this.onSubmit}>
           <input
             placeholder="What do you want to do?"
             onChange={this.onChange}
